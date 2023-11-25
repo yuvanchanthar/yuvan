@@ -1,0 +1,30 @@
+
+.pic-box{
+    position: relative;
+}
+.hot{
+    background-color:orangered;
+    color: white;
+    font-weight: bold;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+.carousel-item img{
+    object-fit: cover;
+    object-position: top;
+    height: 80vh;
+    overflow: hidden;
+}
+.new_price{
+    background-color: green;
+    color:white;
+
+}
+.old_price{
+    color: red;
+}

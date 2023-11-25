@@ -1,0 +1,68 @@
+
+{% extends 'layouts/main.html' %}
+{% block title %}
+
+
+  shopping|online shopkart
+{% endblock title %}
+
+
+{% block content %}
+
+
+{% include 'navs/slider.html' %}
+
+
+<section class="bg-light py-4 my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h4 class="mb-4">Trending Products</h4>
+        <hr style="border-color:white">
+      </div>
+      {% for products in products %}
+      <div class="col-md-4 col-lg-3">
+        <div class="card-my-3">
+          <div class="row">
+            <div class="col-12">
+    
+            
+      
+      <img src="{{products.product_image.url}}" class="card-img-top" style="height: 250px;width: 250px;" alt="products">
+      
+      <a href="{% url 'product_details' products.category.name products.name %}">
+      <div class="card-body">
+        <h5 class="card-title text-primary">{{products.name}}</h5>
+        <span class="float-start old_price"><s>Rs.{{products.original_price | stringformat:'d'}}</s></span>
+        <span class="float-end new_price">Rs.{{products.selling_price | stringformat:'d'}}</span>
+  
+        
+      </div>
+      </a>
+      </div>
+      </div>
+      </div>
+    </div>
+  
+  
+        
+      
+      
+      
+        
+        
+        {% endfor %}
+        
+      
+    </div>
+  </div>
+</section>
+{% endblock content %}
+
+   
+    
+
+            
+           
+         
+    

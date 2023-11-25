@@ -1,0 +1,40 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+  shopping|online shopkart
+{% endblock title %}
+
+
+{% block content %}
+
+
+   
+    <h1 class="king"><b>Favourite Items</b></h1>
+   
+   
+      <table class=" table table-bordered">
+        <tr>
+            <th>image</th>
+            <th>Product Name</th>
+            <th>Unit</th>
+           
+            
+            <th>Remove</th>
+        </tr>
+        {% for item in fav %}
+        <tr>
+            <td><img src="{{item.product.product_image.url}}"height="75px" alt="{{item.product.name}}"></td>
+            <td>{{item.product.name}}</td>
+            <td>{{item.product.selling_price | stringformat:'d'}}</td>
+            
+           
+            <td><a href="{% url 'remove_fav' item.id %}"onclick="return confirm('Are you sure? to remove')"class=" btn btn-danger btn-sm"><i class="bi bi-trash">Remove</i></button></td>
+        </tr>
+        {% endfor %}
+        <tr>
+          
+            
+        </tr>
+
+      </table>
+     
+{% endblock content %}
